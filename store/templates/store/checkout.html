@@ -69,6 +69,17 @@
     document.getElementById('shipping-info').innerHTML = ""
   }
 
+  if (user != 'AnonymousUser'){
+    document.getElementById('user-info').innerHTML = ''
+  }
+
+  if (shipping == "False" && user != 'AnonymousUser'){
+    // hides entire form
+    document.getElementById('form-wrapper').classList.add('hidden')
+    // shows Payment
+    document.getElementById('payment-info').classList.remove('hidden')
+  }
+
   const form = document.getElementById('form')
   form.addEventListener('submit', (e) => {
     e.preventDefault()
